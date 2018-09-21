@@ -54,8 +54,8 @@ func add(a int, b int) int {
 
 func main() {
     // create broker and backend
-	celeryBroker := gocelery.NewRedisCeleryBroker("localhost:6379", "")
-    celeryBackend := gocelery.NewRedisCeleryBackend("localhost:6379", "")
+	celeryBroker := gocelery.NewRedisCeleryBroker("redis://localhost:6379")
+    celeryBackend := gocelery.NewRedisCeleryBackend("redis://localhost:6379")
 
     // use AMQP instead
     // celeryBroker := gocelery.NewAMQPCeleryBroker("amqp://")
@@ -154,8 +154,8 @@ Submit Task from Go Client
 ```go
 func main() {
     // create broker and backend
-	celeryBroker := gocelery.NewRedisCeleryBroker("localhost:6379", "")
-    celeryBackend := gocelery.NewRedisCeleryBackend("localhost:6379", "")
+	celeryBroker := gocelery.NewRedisCeleryBroker("redis://localhost:6379")
+    celeryBackend := gocelery.NewRedisCeleryBackend("redis://localhost:6379")
 
     // use AMQP instead
     // celeryBroker := gocelery.NewAMQPCeleryBroker("amqp://")
@@ -216,3 +216,6 @@ Please create Pull Request for any changes.
 ## LICENSE
 
 The gocelery is offered under MIT license.
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fgocelery%2Fgocelery.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fgocelery%2Fgocelery?ref=badge_large)
